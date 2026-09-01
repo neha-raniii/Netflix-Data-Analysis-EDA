@@ -83,49 +83,30 @@ To analyze Netflix's movies and TV shows to understand its content strategy and 
 
 ### Insight 1: Content Type
 Movies are more common than TV Shows on Netflix.
-
 **Recommendation:** Netflix can continue adding Movies while also increasing TV Show content when needed.
 
 ### Insight 2: Genre
 International Movies are the most common category, followed by Dramas and Comedies.
-
 **Recommendation:** Netflix can continue focusing on popular genres while also adding content from other categories.
 
 ### Insight 3: Country
 The United States contributes the most content to Netflix.
-
 **Recommendation:** Netflix can continue its strong US content while adding more content from other countries.
 
 ### Insight 4: Content Rating
 TV-MA is the most common rating on Netflix.
-
-![Top 10 Content Ratings](images/rating_distribution.png)
-
-![Top Ratings by Content Type](images/rating_by_type.png)
-
 **Recommendation:** Netflix can continue providing mature content while also maintaining different types of ratings.
 
 ### Insight 5: Content Added by Year
 Movie additions peaked in 2019 (~1,420 titles) and TV Show additions peaked in 2020 (~600 titles), though the two peaks are close in timing — both content types saw their strongest year within the 2019–2020 window before declining in 2021.
-
-![Movies vs TV Shows Added Over Time](images/types_added_over_time.png)
-
 **Recommendation:** Netflix should monitor yearly content additions and maintain a steady release strategy.
 
 ### Insight 6: Content Growth Over Time
 Netflix content additions increased significantly after 2015 and reached their highest overall level in 2019.
-
-![Netflix Content Added Over Time](images/_content_added_over_time.png)
-
-![Distribution of Content by Release Year](images/_release_year.png)
-
 **Recommendation:** Netflix should continue monitoring content growth and plan future releases based on content demand and trends.
 
 ### Insight 7: Directors
 Rajiv Chilaka has the highest number of titles among individually credited directors. Note: rows with multiple co-directors (e.g. "Raúl Campos, Jan Suter") were treated as a single combined entry rather than split into individual directors — a possible next step is to explode multi-director rows for a more precise per-director count.
-
-![Top 10 Directors by Number of Titles](images/_top_10_directors.png)
-
 **Recommendation:** Netflix can identify successful directors and consider their past work when planning future content.
 
 Charts and visualizations generated during the analysis are saved in the `images/` folder.
