@@ -1,6 +1,8 @@
 # 🎬 Netflix Data Analysis – Exploratory Data Analysis (EDA)
 
-An exploratory data analysis (EDA) project on Netflix's Movies & TV Shows catalog, built in Python using Pandas, NumPy, Matplotlib, and Seaborn. The project cleans the raw dataset and analyzes it to uncover trends in content type, genres, ratings, release years, and countries of production.
+An exploratory data analysis (EDA) project on Netflix's Movies & TV Shows catalog, built in Python using Pandas, NumPy, Matplotlib, and Seaborn. The project cleans the raw dataset and analyzes it to uncover trends in content type, ratings, release years, and directors.
+
+**Dataset source:** [Netflix Movies and TV Shows – Kaggle](https://www.kaggle.com/datasets/shivamb/netflix-shows) *(update this link if your dataset came from elsewhere)*
 
 ## 📌 About the Project
 
@@ -8,7 +10,7 @@ This project walks through a complete EDA workflow on a Netflix titles dataset:
 
 - **Data cleaning** – handling missing values, fixing data types, and standardizing columns
 - **Univariate & bivariate analysis** – exploring individual columns and relationships between them
-- **Data visualization** – bar charts, count plots, pie charts, and other visuals to surface trends
+- **Data visualization** – bar charts, line charts, and histograms to surface trends
 - **Insight generation** – summarizing patterns in Netflix's content library
 
 All of the analysis and code lives in the Jupyter notebook `Netflix EDA.ipynb`.
@@ -21,7 +23,7 @@ Netflix-Data-Analysis-EDA/
 ├── Netflix-Movies-TVshow-Sample.csv    # Raw/sample dataset
 ├── netflix_cleaned.csv                 # Cleaned dataset produced during the EDA
 ├── images/                             # Charts and visuals exported from the notebook
-├── requirement.txt                     # Python dependencies
+├── requirements.txt                    # Python dependencies
 └── README.md
 ```
 
@@ -53,7 +55,7 @@ source venv/bin/activate      # On Windows: venv\Scripts\activate
 ### 3. Install dependencies
 
 ```bash
-pip install -r requirement.txt
+pip install -r requirements.txt
 ```
 
 ### 4. Launch the notebook
@@ -64,7 +66,7 @@ jupyter notebook "Netflix EDA.ipynb"
 
 ## 🎯 Business Problem
 
-Netflix has a large and diverse content library, but it is important to understand how this content is distributed across different types, genres, countries, ratings, and time periods.
+Netflix has a large and diverse content library, but it's important to understand how this content is distributed across content types, ratings, release years, and directors — and how the catalog has evolved over time.
 
 ## 🎯 Business Objective
 
@@ -72,55 +74,59 @@ To analyze Netflix's movies and TV shows to understand its content strategy and 
 
 ## 🔍 Key Questions Explored
 
-1. Which type of content is most common on Netflix?
-2. Which genres are most common on Netflix?
-3. Which countries contribute the most content to Netflix's library?
-4. Which content ratings are most common on Netflix?
-5. Which years had the highest number of Movies and TV Shows added to Netflix?
-6. How has Netflix's content library changed over time?
+1. Which type of content is most common on Netflix — Movies or TV Shows?
+2. Which content ratings dominate the platform, and does this differ by content type?
+3. How has the volume of content added to Netflix changed year over year?
+4. How does the release-year distribution of titles compare to when they were *added* to Netflix?
+5. Which directors have the most titles on the platform?
 
 ## 💡 Insights & Recommendations
 
-### Insight 1: Content Type
-Movies are more common than TV Shows on Netflix.
+### Insight 1: Content Type Split
+Movies significantly outnumber TV Shows in Netflix's catalog. Across the top content ratings alone, Movie counts run roughly **2x higher** than TV Show counts in the same rating brackets (e.g. TV-MA: ~2,060 movies vs. ~1,145 TV shows; TV-14: ~1,425 movies vs. ~730 TV shows).
 
-**Recommendation:** Netflix can continue adding Movies while also increasing TV Show content when needed.
+![Ratings by content type](images/rating_by_type.png)
 
-### Insight 2: Genre
-International Movies are the most common category, followed by Dramas and Comedies.
+**Recommendation:** Since TV Shows drive higher rewatch and retention, Netflix could weight future acquisition/production budgets more toward originals and series without abandoning its movie-heavy catalog.
 
-**Recommendation:** Netflix can continue focusing on popular genres while also adding content from other categories.
+### Insight 2: Content Ratings
+**TV-MA** is the single most common content rating on Netflix, with roughly **3,200 titles** — about 37% of all rated content and nearly 1.5x more than the next most common rating, **TV-14** (~2,160 titles). Family-friendly ratings (TV-Y, TV-G, PG) each account for well under 500 titles.
 
-### Insight 3: Country
-The United States contributes the most content to Netflix.
+![Top 10 content ratings](images/rating_distribution.png)
 
-**Recommendation:** Netflix can continue its strong US content while adding more content from other countries.
+**Recommendation:** The catalog skews toward mature audiences. If Netflix wants to grow its family/kids segment, there's a clear content gap versus the TV-MA/TV-14 concentration today.
 
-### Insight 4: Content Rating
-TV-MA is the most common rating on Netflix.
+### Insight 3: Content Added Over Time
+Additions stayed under 100 titles/year through 2014, then grew sharply: ~420 in 2016, ~1,160 in 2017, ~1,630 in 2018, peaking at **~2,000 titles in 2019** — before dropping to ~1,880 (2020) and ~1,500 (2021).
 
-**Recommendation:** Netflix can continue providing mature content while also maintaining different types of ratings.
+![Netflix content added over time](images/_content_added_over_time.png)
 
-### Insight 5: Content Added by Year
-Movie additions peaked in 2019 (~1,420 titles) and TV Show additions peaked in 2020 (~600 titles), though the two peaks are close in timing — both content types saw their strongest year within the 2019–2020 window before declining in 2021.
+**Recommendation:** The 2019 peak followed by a two-year decline suggests Netflix scaled back new additions as it shifted toward originals — worth flagging as a strategic pivot point rather than a slowdown.
 
-**Recommendation:** Netflix should monitor yearly content additions and maintain a steady release strategy.
+### Insight 4: Movies vs. TV Shows Added Over Time
+Movie additions peaked in **2019 at ~1,420 titles**, then fell to ~990 by 2021. TV Show additions peaked a year later, in **2020 at ~600 titles**, before slipping to ~500 in 2021 — a smaller decline in both absolute and relative terms than Movies.
 
-### Insight 6: Content Growth Over Time
-Netflix content additions increased significantly after 2015 and reached their highest overall level in 2019.
+![Movies vs TV Shows added over time](images/types_added_over_time.png)
 
-**Recommendation:** Netflix should continue monitoring content growth and plan future releases based on content demand and trends.
+**Recommendation:** TV Shows held up better than Movies during the post-2019 pullback, reinforcing that a shift toward series investment (Insight 1) tracks with actual platform behavior, not just rating-count share.
 
-### Insight 7: Directors
-Rajiv Chilaka has the highest number of titles among individually credited directors. Note: rows with multiple co-directors (e.g. "Raúl Campos, Jan Suter") were treated as a single combined entry rather than split into individual directors — a possible next step is to explode multi-director rows for a more precise per-director count.
+### Insight 5: Release Year Distribution
+Most titles on Netflix were originally released after 2010, with the single largest concentration (~4,700 titles) clustered in the most recent release-year bracket. Very little content predates 1990.
 
-**Recommendation:** Netflix can identify successful directors and consider their past work when planning future content.
+![Distribution of content by release year](images/_release_year.png)
 
-Charts and visualizations generated during the analysis are saved in the `images/` folder.
+**Recommendation:** Netflix's catalog is overwhelmingly modern content rather than a deep classics library — a deliberate positioning worth noting if benchmarking against competitors with larger legacy libraries.
+
+### Insight 6: Directors
+**Rajiv Chilaka** has the most titles among individually credited directors (~19), closely followed by the directing duo **Raúl Campos & Jan Suter** (~18) and **Suhas Kadav** / **Marcus Raboy** (~16 each). Note: rows with multiple co-directors were treated as a single combined entry rather than split into individual directors — exploding multi-director rows would give a more precise per-director count.
+
+![Top 10 directors by number of titles](images/_top_10_directors.png)
+
+**Recommendation:** High-output directors like Rajiv Chilaka (Indian animated content) and Suhas Kadav point to regional content pipelines Netflix could lean on further when scaling non-US production.
 
 ## 📁 Dataset
 
-The dataset used (`Netflix-Movies-TVshow-Sample.csv`) contains metadata about Netflix titles, such as title, type (Movie/TV Show), director, cast, country, date added, release year, rating, and genre listings. After cleaning, the processed version is saved as `netflix_cleaned.csv`.
+The dataset used (`Netflix-Movies-TVshow-Sample.csv`) contains metadata about Netflix titles, such as title, type (Movie/TV Show), director, cast, country, date added, release year, and rating. After cleaning, the processed version is saved as `netflix_cleaned.csv`.
 
 ## 🤝 Contributing
 
