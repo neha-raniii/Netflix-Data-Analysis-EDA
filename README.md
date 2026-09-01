@@ -126,10 +126,6 @@ The dataset used (`Netflix-Movies-TVshow-Sample.csv`) contains metadata about Ne
 
 Contributions, issues, and feature requests are welcome. Feel free to check the [issues page](https://github.com/neha-raniii/Netflix-Data-Analysis-EDA/issues) or open a pull request.
 
-## 📄 License
-
-This project currently has no license specified. If you're the repo owner, consider adding one (e.g., MIT) so others know how they can use your work.
-
 ## ✍️ Author
 
 **Neha Rani** – [@neha-raniii](https://github.com/neha-raniii)
