@@ -2,7 +2,7 @@
 
 An exploratory data analysis (EDA) project on Netflix's Movies & TV Shows catalog, built in Python using Pandas, NumPy, Matplotlib, and Seaborn. The project cleans the raw dataset and analyzes it to uncover trends in content type, ratings, release years, and directors.
 
-**Dataset source:** [Netflix Movies and TV Shows – Kaggle](https://www.kaggle.com/datasets/shivamb/netflix-shows) *(update this link if your dataset came from elsewhere)*
+**Dataset source:** [Netflix Movies and TV Shows – Kaggle](https://www.kaggle.com/datasets/shivamb/netflix-shows) 
 
 ## 📌 About the Project
 
