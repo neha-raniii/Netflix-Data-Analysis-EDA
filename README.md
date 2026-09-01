@@ -84,8 +84,6 @@ To analyze Netflix's movies and TV shows to understand its content strategy and 
 ### Insight 1: Content Type
 Movies are more common than TV Shows on Netflix.
 
-![Rating by Content Type](images/rating_by_type.png)
-
 **Recommendation:** Netflix can continue adding Movies while also increasing TV Show content when needed.
 
 ### Insight 2: Genre
@@ -102,6 +100,8 @@ The United States contributes the most content to Netflix.
 TV-MA is the most common rating on Netflix.
 
 ![Top 10 Content Ratings](images/rating_distribution.png)
+
+![Top Ratings by Content Type](images/rating_by_type.png)
 
 **Recommendation:** Netflix can continue providing mature content while also maintaining different types of ratings.
 
